@@ -10,7 +10,7 @@
       unique-opened
       router
     >
-      <template v-if= "this.$store.state.user_type ==='creator'">
+      <template v-if= "this.$store.state.user_type ==='verifier'">
         <el-menu-item :index="items[1].index" :key="items[1].index">
           <i :class="items[1].icon"></i>
           <span slot="title">{{ items[1].title }}</span>

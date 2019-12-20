@@ -13,8 +13,8 @@ import enterpriseManagementView from '@/components/views/SystemManagement/enterp
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history', // 开发环境
-  // mode: 'hash', // 部署环境
+  // mode: 'history', // 开发环境
+  mode: 'hash', // 部署环境
   routes: [{
       path: '/login',
       component: LoginView
@@ -32,13 +32,16 @@ export default new Router({
           meta: {
             title: '系统首页'
           },
-          // beforeEnter: (to, from, next) => {
-          // 	if (this.$store.state.TOKEN === null) {
-          // 		next({ path: '/login' })
-          // 	} else {
-          // 		next()
-          // 	}
-          // },
+          beforeEnter: (to, from, next) => {
+            let token = window.localStorage.getItem("TOKEN");
+            // console.log(token)
+            // console.log(this.$store.state)
+          	if (token === null) {
+              next({ path: '/login' })
+          	} else {
+          		next()
+          	}
+          },
         },
         {
           path: '/staffManagement',

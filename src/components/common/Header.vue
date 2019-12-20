@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <div class="hhLogo">
-      <h1>
+      <!-- <h1>
         <a href="/">新新人类</a>
-      </h1>
+      </h1> -->
       <div class="logo">考勤工资计算系统</div>
       <!-- 折叠按钮 -->
       <div class="collapse-btn" @click="collapseChage">
@@ -74,7 +74,8 @@ export default {
               var data = response.data
               // console.log(data)
               if (data.results.message === 'success') {
-                localStorage.removeItem('user_id')
+                var user_Id = ''
+                this.$store.commit('SET_USERID', user_Id)              
                 var TOKEN = ''
                 this.$store.commit('SET_TOKEN', TOKEN)
                 if (window.localStorage) {

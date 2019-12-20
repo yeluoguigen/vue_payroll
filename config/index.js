@@ -76,5 +76,5 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   // serverURL: 'http://39.97.115.161' // 服务器域名
-  serverURI: 'http://39.97.115.161' // 路明电脑IP
+  serverURI: 'http://39.97.115.161'
 }
